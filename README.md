@@ -1,8 +1,8 @@
-# LLM-Smashdown: Black-Box LLM Replication via Logit Leakage and Distillation
+# Clone What You Can’t Steal: Black-Box LLM Replication via Logit Leakage and Distillation
 
 This repository provides a similar prototype implementation of the methods described in our paper:
 
-**Clone What You Can’t Steal: Black-Box LLM Replication via Logit Leakage and Distillation**
+> Kanchon Gharami, Hansaka Aluvihare, Shafika Showkat Moni, Berker Peköz. (2025). **Clone what you can’t steal: Black-box LLM replication via logit leakage and distillation.** *Proceedings of the 7th IEEE International Conference on Trust, Privacy and Security in Intelligent Systems and Applications (TPS).* Advance online publication. https://arxiv.org/abs/2509.00973 
 
 The codebase demonstrates the overall pipeline, structure, and experimental workflow used in the study, including projection-matrix recovery, knowledge distillation, and evaluation. This is not the exact original research code; instead, it is a cleaned, representative implementation intended for transparency and reproducibility.
 
@@ -21,42 +21,31 @@ The pipeline consists of two stages:
 
 ## Repository Structure
 
-LLM_Smashdown/
-├── LLM_smashdown.py  
-│   Main training script for local execution. Implements projection recovery, knowledge distillation, and student model training.  
-│
-├── LLM_smashdown_HPC.py  
-│   Cluster/HPC version of the training script. Used for large-scale or multi-GPU training.  
-│
-├── config.json  
-│   Central configuration file containing model depth, temperature, loss weights, dataset paths, and hyperparameters.  
-│
-├── requirements.txt  
-│   Python dependencies required to run the code.  
-│
-├── EDA.ipynb  
-│   Exploratory Data Analysis notebook for dataset inspection and sanity checks.  
-│
-├── Evaluation.ipynb  
-│   Primary evaluation notebook for perplexity, NLL, KL divergence, cosine similarity, and token-level alignment.  
-│
-├── Evaluation_2.ipynb  
-│   Extended evaluation notebook covering generalization, AIC/AICc analysis, and efficiency trade-offs.  
-│
-├── Evaluation Results/  
-│   Saved plots and intermediate evaluation artifacts.  
-│
-├── results/  
-│   Final experiment outputs, logs, and summarized metrics.  
-│
-└── Directory_Structure.txt  
-    Reference description of the expected folder layout.
+## Repository Structure
 
+```text
+LLM_Smashdown/
+├── LLM_smashdown.py          # Main training entry (local): projection recovery + distillation
+├── LLM_smashdown_HPC.py      # Training entry (HPC/cluster): scheduler/multi-GPU friendly
+
+├── config.json               # Experiment configuration (models, loss, data paths, hyperparams)
+├── requirements.txt          # Python dependencies
+
+├── EDA.ipynb                 # Data sanity checks + exploratory analysis
+├── Evaluation.ipynb          # Core evaluation: PPL/NLL/KL + token alignment + similarity
+├── Evaluation_2.ipynb        # Extended eval: generalization + AIC/AICc + efficiency trade-offs
+
+├── Evaluation Results/       # Saved figures + intermediate evaluation artifacts
+├── results/                  # Final outputs: logs, metrics summaries, exported results
+
+├── Directory_Structure.txt   # Expected folder layout / path conventions
+```
 
 
 ## Running the Code
 
 Install dependencies:
+```shell
 pip install -r requirements.txt
 
 Local training:
@@ -64,7 +53,7 @@ python LLM_smashdown.py
 
 HPC / cluster training:
 python LLM_smashdown_HPC.py
-
+```
 
 
 ## Evaluation
@@ -74,7 +63,7 @@ All evaluation is performed using Jupyter notebooks:
 - Evaluation.ipynb for core metrics
 - Evaluation_2.ipynb for advanced analysis
 
-Results are saved under Evaluation Results/ and results/.
+Results are saved under `Evaluation Results/` and `results/`.
 
 
 
@@ -95,21 +84,20 @@ If you use this repository for your research, please cite our paper accepted at 
 
 **BibTeX:**
 ```bibtex
-@inproceedings{gharam2025dasc,
-  author    = {Kanchon Gharami, Hansaka Aluvihare, Shafika Showkat Moni, Berker Peköz},
+@inproceedings{gharami2025tps,
+  author    = {Gharami, Kanchon and Aluvihare, Hansaka and Moni, Shafika Showkat and Peköz, Berker},
   title     = {Clone What You Can't Steal: Black-Box LLM Replication via Logit Leakage and Distillation},
-  booktitle = {Proceedings of the 7th IEEE International Conference on Trust, Privacy and Security in Intelligent Systems, and Applications (TPS)},
+  booktitle = {Proceedings of the 7th IEEE International Conference on Trust, Privacy and Security in Intelligent Systems and Applications (TPS)},
   year      = {2025},
-  note      = {Accepted, in publication}
+  note      = {Accepted, in publication},
 }
 ```
 or,
 
-**BibTeX:**
 ```bibtex
 @article{gharami2025clone,
   title={Clone What You Can't Steal: Black-Box LLM Replication via Logit Leakage and Distillation},
-  author={Gharami, Kanchon and Aluvihare, Hansaka and Moni, Shafika Showkat and Pek{\"o}z, Berker},
+  author={Gharami, Kanchon and Aluvihare, Hansaka and Moni, Shafika Showkat and Peköz, Berker},
   journal={arXiv preprint arXiv:2509.00973},
   year={2025},
   url       = {https://arxiv.org/abs/2509.00973}
@@ -120,8 +108,10 @@ or,
 ## Author
 
 Kanchon Gharami, Hansaka Aluvihare, Shafika Showkat Moni, Berker Peköz
+
 Department of Electrical Engineering and Computer Science, Department of Mathmetics
-Embry-Riddle Aeronautical University
+
+Embry-Riddle Aeronautical University, FL, USA
 
 
 ## Contact
