@@ -21,8 +21,6 @@ The pipeline consists of two stages:
 
 ## Repository Structure
 
-## Repository Structure
-
 ```text
 LLM_Smashdown/
 ├── LLM_smashdown.py          # Main training entry (local): projection recovery + distillation
@@ -59,9 +57,9 @@ python LLM_smashdown_HPC.py
 ## Evaluation
 
 All evaluation is performed using Jupyter notebooks:
-- EDA.ipynb for dataset understanding
-- Evaluation.ipynb for core metrics
-- Evaluation_2.ipynb for advanced analysis
+- `EDA.ipynb` for dataset understanding
+- `Evaluation.ipynb` for core metrics
+- `Evaluation_2.ipynb` for advanced analysis
 
 Results are saved under `Evaluation Results/` and `results/`.
 
