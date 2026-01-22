@@ -1,12 +1,12 @@
 # LLM-Smashdown: Black-Box LLM Replication via Logit Leakage and Distillation
 
-This repository provides a prototype implementation of the methods described in our paper:
+This repository provides a similar prototype implementation of the methods described in our paper:
 
-Clone What You Can’t Steal: Black-Box LLM Replication via Logit Leakage and Distillation
+**Clone What You Can’t Steal: Black-Box LLM Replication via Logit Leakage and Distillation**
 
 The codebase demonstrates the overall pipeline, structure, and experimental workflow used in the study, including projection-matrix recovery, knowledge distillation, and evaluation. This is not the exact original research code; instead, it is a cleaned, representative implementation intended for transparency and reproducibility.
 
----
+
 
 ## Overview
 
@@ -17,7 +17,7 @@ The pipeline consists of two stages:
 1. Stealing stage – Recovering the output projection subspace using SVD over leaked logits.
 2. Cloning stage – Distilling the remaining transformer behavior into compact student models.
 
----
+
 
 ## Repository Structure
 
@@ -52,7 +52,7 @@ LLM_Smashdown/
 └── Directory_Structure.txt  
     Reference description of the expected folder layout.
 
----
+
 
 ## Running the Code
 
@@ -65,7 +65,7 @@ python LLM_smashdown.py
 HPC / cluster training:
 python LLM_smashdown_HPC.py
 
----
+
 
 ## Evaluation
 
@@ -76,7 +76,7 @@ All evaluation is performed using Jupyter notebooks:
 
 Results are saved under Evaluation Results/ and results/.
 
----
+
 
 ## Notes
 
@@ -84,16 +84,46 @@ Results are saved under Evaluation Results/ and results/.
 - All experiments rely on public datasets and simulated black-box access.
 - This repository is intended for research, red-team simulation, and defensive analysis.
 
----
 
-## Citation
 
-If you use this repository, please cite the corresponding paper.
 
----
+## 📖 Citation
+
+If you use this repository for your research, please cite our paper accepted at the **7th IEEE International Conference on Trust, Privacy and Security in Intelligent Systems, and Applications (TPS)**:
+
+*Kanchon Gharami*, Hansaka Aluvihare, Shafika Showkat Moni, Berker Peköz. Clone What You Can't Steal: Black-Box LLM Replication via Logit Leakage and Distillation. arXiv preprint arXiv:2509.00973. Accepted, in publication. (2025)
+
+**BibTeX:**
+```bibtex
+@inproceedings{gharam2025dasc,
+  author    = {Kanchon Gharami, Hansaka Aluvihare, Shafika Showkat Moni, Berker Peköz},
+  title     = {Clone What You Can't Steal: Black-Box LLM Replication via Logit Leakage and Distillation},
+  booktitle = {Proceedings of the 7th IEEE International Conference on Trust, Privacy and Security in Intelligent Systems, and Applications (TPS)},
+  year      = {2025},
+  note      = {Accepted, in publication}
+}
+```
+or,
+
+**BibTeX:**
+```bibtex
+@article{gharami2025clone,
+  title={Clone What You Can't Steal: Black-Box LLM Replication via Logit Leakage and Distillation},
+  author={Gharami, Kanchon and Aluvihare, Hansaka and Moni, Shafika Showkat and Pek{\"o}z, Berker},
+  journal={arXiv preprint arXiv:2509.00973},
+  year={2025},
+  url       = {https://arxiv.org/abs/2509.00973}
+}
+```
+
 
 ## Author
 
-Kanchon Gharami  
-Department of Electrical Engineering and Computer Science  
+Kanchon Gharami, Hansaka Aluvihare, Shafika Showkat Moni, Berker Peköz
+Department of Electrical Engineering and Computer Science, Department of Mathmetics
 Embry-Riddle Aeronautical University
+
+
+## Contact
+For questions or issues, please contact gharamik@my.erau.edu or kanchon2199@gmail.com
+
